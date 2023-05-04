@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ash.My_Travels.entities.TourPackage;
+import com.ash.My_Travels.entities.TourPackages;
 import com.ash.My_Travels.repositories.TourPackageRepository;
 
 @Service
@@ -17,12 +17,12 @@ public class TourPackageService {
 		super();
 		this.tourPackageRepository = tourPackageRepository;
 	}
-	public TourPackage createTourPackage(long id, String name, String place, Integer noOfDays, double cost)
+	public TourPackages createTourPackage(TourPackages tourPackage)
 	{
-		return (TourPackage)tourPackageRepository.findById(id)
-				.orElse(tourPackageRepository.save(  new TourPackage(id,name,place,noOfDays,cost)));
+		return (TourPackages)tourPackageRepository.findById(tourPackage.getId())
+				.orElse(tourPackageRepository.save(tourPackage ));
 	}
-	public Iterable<TourPackage> lookup()
+	public Iterable<TourPackages> lookup()
 	{
 		return tourPackageRepository.findAll();
 	}

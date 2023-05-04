@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ash.My_Travels.entities.TourPackage;
+import com.ash.My_Travels.entities.TourPackages;
 import com.ash.My_Travels.services.TourPackageService;
 
 @RestController
@@ -17,7 +17,7 @@ public WebServiceController(TourPackageService tourPackageService) {
 	this.tourPackageService = tourPackageService;
 }
 @GetMapping
-public Iterable<TourPackage> getAllTourPackages()
+public Iterable<TourPackages> getAllTourPackages()
 {
 	return this.tourPackageService.lookup();
 }

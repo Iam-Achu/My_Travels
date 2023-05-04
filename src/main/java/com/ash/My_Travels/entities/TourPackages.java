@@ -1,39 +1,33 @@
 package com.ash.My_Travels.entities;
 
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Tour_Package")
-public class TourPackage {
+@Table(name = "Tour_Packages")
+public class TourPackages {
 @Id
-@Column(name="Id")
-@GeneratedValue
+@Column(name="ID")
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private long id;
 
-@Column(name="Name")
+@Column(name="NAME")
 private String name;
 
-@Column(name = "Place" )
+@Column(name = "PLACE" )
 private String place;
 
-@Column(name = "No_Of_Days")
+@Column(name = "NO_OF_DAYS")
 private Integer noOfDays;
 
-@Column(name="Cost")
+@Column(name="COST")
 private double cost;
-
-public TourPackage(long id, String name, String place, Integer noOfDays, double cost) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.place = place;
-	this.noOfDays = noOfDays;
-	this.cost = cost;
-}
 
 public long getId() {
 	return id;
